@@ -61,11 +61,11 @@
     <Compile Include="Cancellation.Designer.cs">
       <DependentUpon>Cancellation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flights.cs">
+    <Compile Include="FlightTbl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Flights.Designer.cs">
-      <DependentUpon>Flights.cs</DependentUpon>
+    <Compile Include="FlightTbl.Designer.cs">
+      <DependentUpon>FlightTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <EmbeddedResource Include="Cancellation.resx">
       <DependentUpon>Cancellation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Flights.resx">
-      <DependentUpon>Flights.cs</DependentUpon>
+    <EmbeddedResource Include="FlightTbl.resx">
+      <DependentUpon>FlightTbl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrontPage.resx">
       <DependentUpon>FrontPage.cs</DependentUpon>

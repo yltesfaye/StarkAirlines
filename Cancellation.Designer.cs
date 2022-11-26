@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cancellation));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CancelDGV = new System.Windows.Forms.DataGridView();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
@@ -41,17 +41,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelDGV)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // CancelDGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkCyan;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 391);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(764, 240);
-            this.dataGridView1.TabIndex = 64;
+            this.CancelDGV.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.CancelDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CancelDGV.Location = new System.Drawing.Point(0, 391);
+            this.CancelDGV.Name = "CancelDGV";
+            this.CancelDGV.Size = new System.Drawing.Size(764, 240);
+            this.CancelDGV.TabIndex = 64;
             // 
             // richTextBox2
             // 
@@ -140,9 +140,9 @@
             this.label5.ForeColor = System.Drawing.Color.LawnGreen;
             this.label5.Location = new System.Drawing.Point(286, 157);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 30);
+            this.label5.Size = new System.Drawing.Size(196, 30);
             this.label5.TabIndex = 51;
-            this.label5.Text = "Ticket Booking";
+            this.label5.Text = "Ticket Cancellation";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
@@ -176,7 +176,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(735, 622);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.CancelDGV);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox4);
@@ -190,13 +190,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cancellation";
             this.Text = "Cancellation";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CancelDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView CancelDGV;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox richTextBox4;

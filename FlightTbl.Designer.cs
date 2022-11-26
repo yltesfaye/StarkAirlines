@@ -1,6 +1,6 @@
 ﻿namespace StarkAirlines
 {
-    partial class Flights
+    partial class FlightTbl
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Flights));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlightTbl));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,10 +41,11 @@
             this.Fdest = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.AddFlights = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.ResetFlight = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Fdate = new System.Windows.Forms.DateTimePicker();
+            this.ViewFlights = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,7 +164,7 @@
             this.AddFlights.BackColor = System.Drawing.Color.MediumPurple;
             this.AddFlights.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddFlights.ForeColor = System.Drawing.Color.DarkRed;
-            this.AddFlights.Location = new System.Drawing.Point(359, 455);
+            this.AddFlights.Location = new System.Drawing.Point(364, 441);
             this.AddFlights.Margin = new System.Windows.Forms.Padding(0);
             this.AddFlights.Name = "AddFlights";
             this.AddFlights.Size = new System.Drawing.Size(96, 36);
@@ -172,18 +173,19 @@
             this.AddFlights.UseVisualStyleBackColor = false;
             this.AddFlights.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // ResetFlight
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumPurple;
-            this.button2.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkRed;
-            this.button2.Location = new System.Drawing.Point(197, 455);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 36);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = false;
+            this.ResetFlight.BackColor = System.Drawing.Color.MediumPurple;
+            this.ResetFlight.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetFlight.ForeColor = System.Drawing.Color.DarkRed;
+            this.ResetFlight.Location = new System.Drawing.Point(202, 441);
+            this.ResetFlight.Margin = new System.Windows.Forms.Padding(0);
+            this.ResetFlight.Name = "ResetFlight";
+            this.ResetFlight.Size = new System.Drawing.Size(96, 36);
+            this.ResetFlight.TabIndex = 12;
+            this.ResetFlight.Text = "Reset";
+            this.ResetFlight.UseVisualStyleBackColor = false;
+            this.ResetFlight.Click += new System.EventHandler(this.ResetFlight_Click);
             // 
             // label5
             // 
@@ -218,16 +220,31 @@
             this.Fdate.Size = new System.Drawing.Size(166, 20);
             this.Fdate.TabIndex = 15;
             // 
-            // Flights
+            // ViewFlights
+            // 
+            this.ViewFlights.BackColor = System.Drawing.Color.MediumPurple;
+            this.ViewFlights.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewFlights.ForeColor = System.Drawing.Color.DarkRed;
+            this.ViewFlights.Location = new System.Drawing.Point(270, 493);
+            this.ViewFlights.Margin = new System.Windows.Forms.Padding(0);
+            this.ViewFlights.Name = "ViewFlights";
+            this.ViewFlights.Size = new System.Drawing.Size(118, 46);
+            this.ViewFlights.TabIndex = 16;
+            this.ViewFlights.Text = "View Flights";
+            this.ViewFlights.UseVisualStyleBackColor = false;
+            this.ViewFlights.Click += new System.EventHandler(this.ViewFlights_Click);
+            // 
+            // FlightTbl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(500, 548);
+            this.Controls.Add(this.ViewFlights);
             this.Controls.Add(this.Fdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ResetFlight);
             this.Controls.Add(this.AddFlights);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.Fdest);
@@ -240,7 +257,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Flights";
+            this.Name = "FlightTbl";
             this.Text = "Flights";
             this.Load += new System.EventHandler(this.Flights_Load);
             this.ResumeLayout(false);
@@ -261,9 +278,10 @@
         private System.Windows.Forms.ComboBox Fdest;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button AddFlights;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button ResetFlight;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker Fdate;
+        private System.Windows.Forms.Button ViewFlights;
     }
 }

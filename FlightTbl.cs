@@ -12,9 +12,9 @@ using System.Data.SqlClient;
 
 namespace StarkAirlines
 {
-    public partial class Flights : Form
+    public partial class FlightTbl : Form
     {
-        public Flights()
+        public FlightTbl()
         {
             InitializeComponent();
         }
@@ -88,7 +88,7 @@ namespace StarkAirlines
                 try
                 {
                     Connect.Open();
-                    string query = "Insert into FlightTbl values (" + Fcode.Text + ", '" + Fsource.SelectedItem.ToString() + "', '" + Fdest.SelectedItem.ToString() + "', '" + Fdate.Value.ToString() + "', '" + Fseatnum.Text + "')";
+                    string query = "Insert into FlightTbl values ('" + Fcode.Text + "', '" + Fsource.SelectedItem.ToString() + "', '" + Fdest.SelectedItem.ToString() + "', '" + Fdate.Value.ToString() + "', " + Fseatnum.Text + ")";
                     SqlCommand cmd = new SqlCommand(query, Connect);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Flight Recorded Successfully");
@@ -106,6 +106,19 @@ namespace StarkAirlines
         private void Flights_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ResetFlight_Click(object sender, EventArgs e)
+        {
+            Fcode.Text = "";
+            Fseatnum.Text = "";
+        }
+
+        private void ViewFlights_Click(object sender, EventArgs e)
+        {
+            ViewFlights viewflt = new ViewFlights();
+            viewflt.Show();
+            this.Hide();
         }
     }
 }

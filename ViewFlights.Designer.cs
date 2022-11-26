@@ -31,22 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewFlights));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.FdateTb = new System.Windows.Forms.DateTimePicker();
+            this.FDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.FdestTb = new System.Windows.Forms.ComboBox();
-            this.FsourceTb = new System.Windows.Forms.ComboBox();
+            this.DstCb = new System.Windows.Forms.ComboBox();
+            this.SrcCb = new System.Windows.Forms.ComboBox();
             this.SeatNum = new System.Windows.Forms.RichTextBox();
             this.FcodeTb = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FlightDGV = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Update = new System.Windows.Forms.Button();
+            this.BackFlights = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.FlightDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,12 +73,12 @@
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // FdateTb
+            // FDate
             // 
-            this.FdateTb.Location = new System.Drawing.Point(143, 254);
-            this.FdateTb.Name = "FdateTb";
-            this.FdateTb.Size = new System.Drawing.Size(166, 20);
-            this.FdateTb.TabIndex = 25;
+            this.FDate.Location = new System.Drawing.Point(143, 254);
+            this.FDate.Name = "FDate";
+            this.FDate.Size = new System.Drawing.Size(166, 20);
+            this.FDate.TabIndex = 25;
             // 
             // label6
             // 
@@ -92,21 +92,28 @@
             this.label6.Text = "TakeOfDate";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // FdestTb
+            // DstCb
             // 
-            this.FdestTb.FormattingEnabled = true;
-            this.FdestTb.Location = new System.Drawing.Point(442, 257);
-            this.FdestTb.Name = "FdestTb";
-            this.FdestTb.Size = new System.Drawing.Size(166, 21);
-            this.FdestTb.TabIndex = 23;
+            this.DstCb.FormattingEnabled = true;
+            this.DstCb.Items.AddRange(new object[] {
+            "Washington D.C.",
+            "Miami",
+            "Tronto",
+            "Barcenola"});
+            this.DstCb.Location = new System.Drawing.Point(442, 257);
+            this.DstCb.Name = "DstCb";
+            this.DstCb.Size = new System.Drawing.Size(166, 21);
+            this.DstCb.TabIndex = 23;
             // 
-            // FsourceTb
+            // SrcCb
             // 
-            this.FsourceTb.FormattingEnabled = true;
-            this.FsourceTb.Location = new System.Drawing.Point(440, 207);
-            this.FsourceTb.Name = "FsourceTb";
-            this.FsourceTb.Size = new System.Drawing.Size(166, 21);
-            this.FsourceTb.TabIndex = 22;
+            this.SrcCb.FormattingEnabled = true;
+            this.SrcCb.Items.AddRange(new object[] {
+            "Sioux Falls"});
+            this.SrcCb.Location = new System.Drawing.Point(440, 207);
+            this.SrcCb.Name = "SrcCb";
+            this.SrcCb.Size = new System.Drawing.Size(166, 21);
+            this.SrcCb.TabIndex = 22;
             // 
             // SeatNum
             // 
@@ -172,14 +179,15 @@
             this.label1.Text = "Flight Code";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dataGridView1
+            // FlightDGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkCyan;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 395);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(618, 160);
-            this.dataGridView1.TabIndex = 26;
+            this.FlightDGV.BackgroundColor = System.Drawing.Color.DarkCyan;
+            this.FlightDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FlightDGV.Location = new System.Drawing.Point(0, 395);
+            this.FlightDGV.Name = "FlightDGV";
+            this.FlightDGV.Size = new System.Drawing.Size(618, 160);
+            this.FlightDGV.TabIndex = 26;
+            this.FlightDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FlightDGV_CellContentClick);
             // 
             // button2
             // 
@@ -193,45 +201,49 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "Reset";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // button1
+            // Delete
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumPurple;
-            this.button1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Location = new System.Drawing.Point(299, 343);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
+            this.Delete.BackColor = System.Drawing.Color.MediumPurple;
+            this.Delete.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete.ForeColor = System.Drawing.Color.DarkRed;
+            this.Delete.Location = new System.Drawing.Point(299, 343);
+            this.Delete.Margin = new System.Windows.Forms.Padding(0);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(97, 36);
+            this.Delete.TabIndex = 27;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
-            // button3
+            // Update
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumPurple;
-            this.button3.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.DarkRed;
-            this.button3.Location = new System.Drawing.Point(40, 343);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 36);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Update.BackColor = System.Drawing.Color.MediumPurple;
+            this.Update.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Update.ForeColor = System.Drawing.Color.DarkRed;
+            this.Update.Location = new System.Drawing.Point(40, 343);
+            this.Update.Margin = new System.Windows.Forms.Padding(0);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(97, 36);
+            this.Update.TabIndex = 29;
+            this.Update.Text = "Update";
+            this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // button4
+            // BackFlights
             // 
-            this.button4.BackColor = System.Drawing.Color.MediumPurple;
-            this.button4.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.DarkRed;
-            this.button4.Location = new System.Drawing.Point(420, 343);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 36);
-            this.button4.TabIndex = 30;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BackFlights.BackColor = System.Drawing.Color.MediumPurple;
+            this.BackFlights.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackFlights.ForeColor = System.Drawing.Color.DarkRed;
+            this.BackFlights.Location = new System.Drawing.Point(420, 343);
+            this.BackFlights.Margin = new System.Windows.Forms.Padding(0);
+            this.BackFlights.Name = "BackFlights";
+            this.BackFlights.Size = new System.Drawing.Size(97, 36);
+            this.BackFlights.TabIndex = 30;
+            this.BackFlights.Text = "Back";
+            this.BackFlights.UseVisualStyleBackColor = false;
+            this.BackFlights.Click += new System.EventHandler(this.BackFlight);
             // 
             // ViewFlights
             // 
@@ -239,15 +251,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(618, 554);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.BackFlights);
+            this.Controls.Add(this.Update);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.FdateTb);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.FlightDGV);
+            this.Controls.Add(this.FDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.FdestTb);
-            this.Controls.Add(this.FsourceTb);
+            this.Controls.Add(this.DstCb);
+            this.Controls.Add(this.SrcCb);
             this.Controls.Add(this.SeatNum);
             this.Controls.Add(this.FcodeTb);
             this.Controls.Add(this.label4);
@@ -260,7 +272,7 @@
             this.Name = "ViewFlights";
             this.Text = "ViewFlights";
             this.Load += new System.EventHandler(this.ViewFlights_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FlightDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,20 +280,20 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker FdateTb;
+        private System.Windows.Forms.DateTimePicker FDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox FdestTb;
-        private System.Windows.Forms.ComboBox FsourceTb;
+        private System.Windows.Forms.ComboBox DstCb;
+        private System.Windows.Forms.ComboBox SrcCb;
         private System.Windows.Forms.RichTextBox SeatNum;
         private System.Windows.Forms.RichTextBox FcodeTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView FlightDGV;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button BackFlights;
     }
 }

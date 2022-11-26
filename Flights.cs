@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace StarkAirlines
 {
@@ -16,6 +18,9 @@ namespace StarkAirlines
         {
             InitializeComponent();
         }
+
+        SqlConnection Connect = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\DSU\OneDrive - Dakota State University\Documents\AirlineDb.mdf;Integrated Security = True; Connect Timeout = 30");
+
 
         private void Username_Click(object sender, EventArgs e)
         {
@@ -68,6 +73,37 @@ namespace StarkAirlines
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Fcode.Text == "" || Fsource.Text == "" || Fdest.Text == "" || Fdate.Text == "" || Fseatnum.Text == "")
+            {
+                MessageBox.Show("Missing Information;");
+            }
+            else
+            {
+                try
+                {
+                    Connect.Open();
+                    string query = "Insert into FlightTbl values (" + Fcode.Text + ", '" + Fsource.SelectedItem.ToString() + "', '" + Fdest.SelectedItem.ToString() + "', '" + Fdate.Value.ToString() + "', '" + Fseatnum.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Connect);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Flight Recorded Successfully");
+                    Connect.Close();
+
+                }
+                catch (Exception Excpt)
+                {
+                    MessageBox.Show(Excpt.Message);
+                }
+
+            }
+        }
+
+        private void Flights_Load(object sender, EventArgs e)
         {
 
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace StarkAirlines
 {
@@ -18,6 +19,11 @@ namespace StarkAirlines
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViewFlights_Load(object sender, EventArgs e)
         {
 
         }

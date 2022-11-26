@@ -16,7 +16,7 @@ namespace StarkAirlines
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);   
-            Application.Run(new ViewPassenger());
+            Application.Run(new Flights());
         }
     }
 }

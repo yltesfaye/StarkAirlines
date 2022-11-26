@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewFlights));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FdateTb = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.FdestTb = new System.Windows.Forms.ComboBox();
+            this.FsourceTb = new System.Windows.Forms.ComboBox();
+            this.SeatNum = new System.Windows.Forms.RichTextBox();
+            this.FcodeTb = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,12 +73,12 @@
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // dateTimePicker1
+            // FdateTb
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(143, 254);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 20);
-            this.dateTimePicker1.TabIndex = 25;
+            this.FdateTb.Location = new System.Drawing.Point(143, 254);
+            this.FdateTb.Name = "FdateTb";
+            this.FdateTb.Size = new System.Drawing.Size(166, 20);
+            this.FdateTb.TabIndex = 25;
             // 
             // label6
             // 
@@ -92,37 +92,37 @@
             this.label6.Text = "TakeOfDate";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // comboBox2
+            // FdestTb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(442, 257);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 21);
-            this.comboBox2.TabIndex = 23;
+            this.FdestTb.FormattingEnabled = true;
+            this.FdestTb.Location = new System.Drawing.Point(442, 257);
+            this.FdestTb.Name = "FdestTb";
+            this.FdestTb.Size = new System.Drawing.Size(166, 21);
+            this.FdestTb.TabIndex = 23;
             // 
-            // comboBox1
+            // FsourceTb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(440, 207);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 22;
+            this.FsourceTb.FormattingEnabled = true;
+            this.FsourceTb.Location = new System.Drawing.Point(440, 207);
+            this.FsourceTb.Name = "FsourceTb";
+            this.FsourceTb.Size = new System.Drawing.Size(166, 21);
+            this.FsourceTb.TabIndex = 22;
             // 
-            // richTextBox2
+            // SeatNum
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(299, 294);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox2.TabIndex = 21;
-            this.richTextBox2.Text = "";
+            this.SeatNum.Location = new System.Drawing.Point(299, 294);
+            this.SeatNum.Name = "SeatNum";
+            this.SeatNum.Size = new System.Drawing.Size(166, 30);
+            this.SeatNum.TabIndex = 21;
+            this.SeatNum.Text = "";
             // 
-            // richTextBox1
+            // FcodeTb
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(134, 198);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
+            this.FcodeTb.Location = new System.Drawing.Point(134, 198);
+            this.FcodeTb.Name = "FcodeTb";
+            this.FcodeTb.Size = new System.Drawing.Size(166, 30);
+            this.FcodeTb.TabIndex = 20;
+            this.FcodeTb.Text = "";
             // 
             // label4
             // 
@@ -244,12 +244,12 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.FdateTb);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.FdestTb);
+            this.Controls.Add(this.FsourceTb);
+            this.Controls.Add(this.SeatNum);
+            this.Controls.Add(this.FcodeTb);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -259,6 +259,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewFlights";
             this.Text = "ViewFlights";
+            this.Load += new System.EventHandler(this.ViewFlights_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -267,12 +268,12 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FdateTb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.ComboBox FdestTb;
+        private System.Windows.Forms.ComboBox FsourceTb;
+        private System.Windows.Forms.RichTextBox SeatNum;
+        private System.Windows.Forms.RichTextBox FcodeTb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

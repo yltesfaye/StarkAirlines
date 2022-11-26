@@ -34,17 +34,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.Fcode = new System.Windows.Forms.RichTextBox();
+            this.Fseatnum = new System.Windows.Forms.RichTextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Fsource = new System.Windows.Forms.ComboBox();
+            this.Fdest = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.AddFlights = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Fdate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,37 +110,44 @@
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // richTextBox1
+            // Fcode
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(322, 205);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.Fcode.Location = new System.Drawing.Point(322, 205);
+            this.Fcode.Name = "Fcode";
+            this.Fcode.Size = new System.Drawing.Size(166, 30);
+            this.Fcode.TabIndex = 7;
+            this.Fcode.Text = "";
             // 
-            // richTextBox2
+            // Fseatnum
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(322, 379);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
+            this.Fseatnum.Location = new System.Drawing.Point(322, 379);
+            this.Fseatnum.Name = "Fseatnum";
+            this.Fseatnum.Size = new System.Drawing.Size(166, 30);
+            this.Fseatnum.TabIndex = 8;
+            this.Fseatnum.Text = "";
             // 
-            // comboBox1
+            // Fsource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(322, 261);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 9;
+            this.Fsource.FormattingEnabled = true;
+            this.Fsource.Items.AddRange(new object[] {
+            "Sioux Falls"});
+            this.Fsource.Location = new System.Drawing.Point(322, 261);
+            this.Fsource.Name = "Fsource";
+            this.Fsource.Size = new System.Drawing.Size(166, 21);
+            this.Fsource.TabIndex = 9;
             // 
-            // comboBox2
+            // Fdest
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(322, 307);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 21);
-            this.comboBox2.TabIndex = 10;
+            this.Fdest.FormattingEnabled = true;
+            this.Fdest.Items.AddRange(new object[] {
+            "Washington D.C.",
+            "Miami",
+            "Tronto",
+            "Barcenola"});
+            this.Fdest.Location = new System.Drawing.Point(322, 307);
+            this.Fdest.Name = "Fdest";
+            this.Fdest.Size = new System.Drawing.Size(166, 21);
+            this.Fdest.TabIndex = 10;
             // 
             // panel3
             // 
@@ -151,18 +158,19 @@
             this.panel3.Size = new System.Drawing.Size(146, 404);
             this.panel3.TabIndex = 11;
             // 
-            // button1
+            // AddFlights
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumPurple;
-            this.button1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Location = new System.Drawing.Point(359, 455);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 36);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = false;
+            this.AddFlights.BackColor = System.Drawing.Color.MediumPurple;
+            this.AddFlights.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddFlights.ForeColor = System.Drawing.Color.DarkRed;
+            this.AddFlights.Location = new System.Drawing.Point(359, 455);
+            this.AddFlights.Margin = new System.Windows.Forms.Padding(0);
+            this.AddFlights.Name = "AddFlights";
+            this.AddFlights.Size = new System.Drawing.Size(96, 36);
+            this.AddFlights.TabIndex = 0;
+            this.AddFlights.Text = "Add";
+            this.AddFlights.UseVisualStyleBackColor = false;
+            this.AddFlights.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -203,12 +211,12 @@
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // dateTimePicker1
+            // Fdate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(322, 341);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(166, 20);
-            this.dateTimePicker1.TabIndex = 15;
+            this.Fdate.Location = new System.Drawing.Point(322, 341);
+            this.Fdate.Name = "Fdate";
+            this.Fdate.Size = new System.Drawing.Size(166, 20);
+            this.Fdate.TabIndex = 15;
             // 
             // Flights
             // 
@@ -216,16 +224,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(500, 548);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Fdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.AddFlights);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.Fdest);
+            this.Controls.Add(this.Fsource);
+            this.Controls.Add(this.Fseatnum);
+            this.Controls.Add(this.Fcode);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -234,6 +242,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Flights";
             this.Text = "Flights";
+            this.Load += new System.EventHandler(this.Flights_Load);
             this.ResumeLayout(false);
 
         }
@@ -245,16 +254,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox Fcode;
+        private System.Windows.Forms.RichTextBox Fseatnum;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Fsource;
+        private System.Windows.Forms.ComboBox Fdest;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button AddFlights;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker Fdate;
     }
 }

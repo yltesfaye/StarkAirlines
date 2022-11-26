@@ -31,23 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewPassenger));
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.PidTb = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.PnameTb = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.PpassTb = new System.Windows.Forms.RichTextBox();
+            this.NatCb = new System.Windows.Forms.ComboBox();
+            this.GendCb = new System.Windows.Forms.ComboBox();
+            this.PphoneTB = new System.Windows.Forms.RichTextBox();
             this.BackView = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.ResetView = new System.Windows.Forms.Button();
             this.DeleteView = new System.Windows.Forms.Button();
             this.PassengerDGV = new System.Windows.Forms.DataGridView();
+            this.PaddTb = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PassengerDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,13 +76,13 @@
             this.panel1.Size = new System.Drawing.Size(764, 144);
             this.panel1.TabIndex = 15;
             // 
-            // richTextBox1
+            // PidTb
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(208, 231);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
+            this.PidTb.Location = new System.Drawing.Point(208, 231);
+            this.PidTb.Name = "PidTb";
+            this.PidTb.Size = new System.Drawing.Size(166, 30);
+            this.PidTb.TabIndex = 18;
+            this.PidTb.Text = "";
             // 
             // label1
             // 
@@ -143,13 +145,13 @@
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // richTextBox2
+            // PnameTb
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(208, 279);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox2.TabIndex = 29;
-            this.richTextBox2.Text = "";
+            this.PnameTb.Location = new System.Drawing.Point(208, 279);
+            this.PnameTb.Name = "PnameTb";
+            this.PnameTb.Size = new System.Drawing.Size(166, 30);
+            this.PnameTb.TabIndex = 29;
+            this.PnameTb.Text = "";
             // 
             // label2
             // 
@@ -163,44 +165,239 @@
             this.label2.Text = "Passenger Name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // richTextBox3
+            // PpassTb
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(586, 231);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox3.TabIndex = 34;
-            this.richTextBox3.Text = "";
+            this.PpassTb.Location = new System.Drawing.Point(586, 231);
+            this.PpassTb.Name = "PpassTb";
+            this.PpassTb.Size = new System.Drawing.Size(166, 30);
+            this.PpassTb.TabIndex = 34;
+            this.PpassTb.Text = "";
             // 
-            // comboBox2
+            // NatCb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(208, 336);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(166, 21);
-            this.comboBox2.TabIndex = 35;
+            this.NatCb.FormattingEnabled = true;
+            this.NatCb.Items.AddRange(new object[] {
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua and Barbuda",
+            "Argentina",
+            "Armenia",
+            "Austria",
+            "Azerbaijan",
+            "Bahrain",
+            "Bangladesh",
+            "Barbados",
+            "Belarus",
+            "Belgium",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bolivia",
+            "Bosnia and Herzegovina",
+            "Botswana",
+            "Brazil",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cabo Verde",
+            "Cambodia",
+            "Cameroon",
+            "Canada",
+            "Central African Republic",
+            "Chad",
+            "Channel Islands",
+            "Chile",
+            "China",
+            "Colombia",
+            "Comoros",
+            "Congo",
+            "Costa Rica",
+            "Côte d\'Ivoire",
+            "Croatia",
+            "Cuba",
+            "Cyprus",
+            "Czech Republic",
+            "Denmark",
+            "Djibouti",
+            "Dominica",
+            "Dominican Republic",
+            "DR Congo",
+            "Ecuador",
+            "Egypt",
+            "El Salvador",
+            "Equatorial Guinea",
+            "Eritrea",
+            "Estonia",
+            "Eswatini",
+            "Ethiopia",
+            "Faeroe Islands",
+            "Finland",
+            "France",
+            "French Guiana",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germany",
+            "Ghana",
+            "Gibraltar",
+            "Greece",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guyana",
+            "Haiti",
+            "Holy See",
+            "Honduras",
+            "Hong Kong",
+            "Hungary",
+            "Iceland",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Ireland",
+            "Isle of Man",
+            "Israel",
+            "Italy",
+            "Jamaica",
+            "Japan",
+            "Jordan",
+            "Kazakhstan",
+            "Kenya",
+            "Kuwait",
+            "Kyrgyzstan",
+            "Laos",
+            "Latvia",
+            "Lebanon",
+            "Lesotho",
+            "Liberia",
+            "Libya",
+            "Liechtenstein",
+            "Lithuania",
+            "Luxembourg",
+            "Macao",
+            "Madagascar",
+            "Malawi",
+            "Malaysia",
+            "Maldives",
+            "Mali",
+            "Malta",
+            "Mauritania",
+            "Mauritius",
+            "Mayotte",
+            "Mexico",
+            "Moldova",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Morocco",
+            "Mozambique",
+            "Myanmar",
+            "Namibia",
+            "Nepal",
+            "Netherlands",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "North Korea",
+            "North Macedonia",
+            "Norway",
+            "Oman",
+            "Pakistan",
+            "Panama",
+            "Paraguay",
+            "Peru",
+            "Philippines",
+            "Poland",
+            "Portugal",
+            "Qatar",
+            "Réunion",
+            "Romania",
+            "Russia",
+            "Rwanda",
+            "Saint Helena",
+            "Saint Kitts and Nevis",
+            "Saint Lucia",
+            "Saint Vincent and the Grenadines",
+            "San Marino",
+            "Sao Tome & Principe",
+            "Saudi Arabia",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Slovakia",
+            "Slovenia",
+            "Somalia",
+            "South Africa",
+            "South Korea",
+            "South Sudan",
+            "Spain",
+            "Sri Lanka",
+            "State of Palestine",
+            "Sudan",
+            "Suriname",
+            "Sweden",
+            "Switzerland",
+            "Syria",
+            "Taiwan",
+            "Tajikistan",
+            "Tanzania",
+            "Thailand",
+            "The Bahamas",
+            "Timor-Leste",
+            "Togo",
+            "Trinidad and Tobago",
+            "Tunisia",
+            "Turkey",
+            "Turkmenistan",
+            "Uganda",
+            "Ukraine",
+            "United Arab Emirates",
+            "United Kingdom",
+            "United States",
+            "Uruguay",
+            "Uzbekistan",
+            "Venezuela",
+            "Vietnam",
+            "Western Sahara",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"});
+            this.NatCb.Location = new System.Drawing.Point(208, 336);
+            this.NatCb.Name = "NatCb";
+            this.NatCb.Size = new System.Drawing.Size(166, 21);
+            this.NatCb.TabIndex = 35;
             // 
-            // comboBox1
+            // GendCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(586, 288);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 36;
+            this.GendCb.FormattingEnabled = true;
+            this.GendCb.Items.AddRange(new object[] {
+            "Male ",
+            "Female "});
+            this.GendCb.Location = new System.Drawing.Point(586, 288);
+            this.GendCb.Name = "GendCb";
+            this.GendCb.Size = new System.Drawing.Size(166, 21);
+            this.GendCb.TabIndex = 36;
             // 
-            // richTextBox4
+            // PphoneTB
             // 
-            this.richTextBox4.Location = new System.Drawing.Point(586, 331);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox4.TabIndex = 37;
-            this.richTextBox4.Text = "";
+            this.PphoneTB.Location = new System.Drawing.Point(586, 331);
+            this.PphoneTB.Name = "PphoneTB";
+            this.PphoneTB.Size = new System.Drawing.Size(166, 30);
+            this.PphoneTB.TabIndex = 37;
+            this.PphoneTB.Text = "";
             // 
             // BackView
             // 
             this.BackView.BackColor = System.Drawing.Color.MediumPurple;
             this.BackView.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BackView.ForeColor = System.Drawing.Color.DarkRed;
-            this.BackView.Location = new System.Drawing.Point(518, 409);
+            this.BackView.Location = new System.Drawing.Point(519, 432);
             this.BackView.Margin = new System.Windows.Forms.Padding(0);
             this.BackView.Name = "BackView";
             this.BackView.Size = new System.Drawing.Size(97, 36);
@@ -214,7 +411,7 @@
             this.Update.BackColor = System.Drawing.Color.MediumPurple;
             this.Update.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.Color.DarkRed;
-            this.Update.Location = new System.Drawing.Point(138, 409);
+            this.Update.Location = new System.Drawing.Point(139, 432);
             this.Update.Margin = new System.Windows.Forms.Padding(0);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(97, 36);
@@ -228,26 +425,28 @@
             this.ResetView.BackColor = System.Drawing.Color.MediumPurple;
             this.ResetView.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetView.ForeColor = System.Drawing.Color.DarkRed;
-            this.ResetView.Location = new System.Drawing.Point(267, 409);
+            this.ResetView.Location = new System.Drawing.Point(268, 432);
             this.ResetView.Margin = new System.Windows.Forms.Padding(0);
             this.ResetView.Name = "ResetView";
             this.ResetView.Size = new System.Drawing.Size(97, 36);
             this.ResetView.TabIndex = 40;
             this.ResetView.Text = "Reset";
             this.ResetView.UseVisualStyleBackColor = false;
+            this.ResetView.Click += new System.EventHandler(this.ResetView_Click);
             // 
             // DeleteView
             // 
             this.DeleteView.BackColor = System.Drawing.Color.MediumPurple;
             this.DeleteView.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteView.ForeColor = System.Drawing.Color.DarkRed;
-            this.DeleteView.Location = new System.Drawing.Point(397, 409);
+            this.DeleteView.Location = new System.Drawing.Point(398, 432);
             this.DeleteView.Margin = new System.Windows.Forms.Padding(0);
             this.DeleteView.Name = "DeleteView";
             this.DeleteView.Size = new System.Drawing.Size(97, 36);
             this.DeleteView.TabIndex = 39;
             this.DeleteView.Text = "Delete";
             this.DeleteView.UseVisualStyleBackColor = false;
+            this.DeleteView.Click += new System.EventHandler(this.DeleteView_Click);
             // 
             // PassengerDGV
             // 
@@ -258,6 +457,27 @@
             this.PassengerDGV.Name = "PassengerDGV";
             this.PassengerDGV.Size = new System.Drawing.Size(764, 160);
             this.PassengerDGV.TabIndex = 38;
+            this.PassengerDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PassengerDGV_CellContentClick);
+            // 
+            // PaddTb
+            // 
+            this.PaddTb.Location = new System.Drawing.Point(208, 379);
+            this.PaddTb.Name = "PaddTb";
+            this.PaddTb.Size = new System.Drawing.Size(166, 30);
+            this.PaddTb.TabIndex = 44;
+            this.PaddTb.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.LawnGreen;
+            this.label8.Location = new System.Drawing.Point(12, 379);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(190, 30);
+            this.label8.TabIndex = 43;
+            this.label8.Text = "Passenger Address";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ViewPassenger
             // 
@@ -265,22 +485,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(764, 644);
+            this.Controls.Add(this.PaddTb);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.BackView);
             this.Controls.Add(this.Update);
             this.Controls.Add(this.ResetView);
             this.Controls.Add(this.DeleteView);
             this.Controls.Add(this.PassengerDGV);
-            this.Controls.Add(this.richTextBox4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.richTextBox3);
+            this.Controls.Add(this.PphoneTB);
+            this.Controls.Add(this.GendCb);
+            this.Controls.Add(this.NatCb);
+            this.Controls.Add(this.PpassTb);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.PnameTb);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.PidTb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
@@ -297,22 +519,24 @@
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox PidTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox PnameTb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox PpassTb;
+        private System.Windows.Forms.ComboBox NatCb;
+        private System.Windows.Forms.ComboBox GendCb;
+        private System.Windows.Forms.RichTextBox PphoneTB;
         private System.Windows.Forms.Button BackView;
         private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button ResetView;
         private System.Windows.Forms.Button DeleteView;
         private System.Windows.Forms.DataGridView PassengerDGV;
+        private System.Windows.Forms.RichTextBox PaddTb;
+        private System.Windows.Forms.Label label8;
     }
 }

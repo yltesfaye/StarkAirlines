@@ -67,5 +67,12 @@ namespace StarkAirlines
             view.Show();
             this.Hide();
         }
+
+        private void Back_clikc(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
     }
 }

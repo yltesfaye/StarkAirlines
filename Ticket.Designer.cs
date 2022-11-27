@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ticket));
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Tid = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.FCode = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.PpassTb = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.Tid = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TicketDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +75,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(735, 144);
             this.panel1.TabIndex = 17;
-            // 
-            // Tid
-            // 
-            this.Tid.Location = new System.Drawing.Point(188, 201);
-            this.Tid.Name = "Tid";
-            this.Tid.Size = new System.Drawing.Size(166, 30);
-            this.Tid.TabIndex = 20;
-            this.Tid.Text = "";
             // 
             // label1
             // 
@@ -292,6 +284,14 @@
             this.label10.Text = "Passport";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // Tid
+            // 
+            this.Tid.Location = new System.Drawing.Point(188, 201);
+            this.Tid.Name = "Tid";
+            this.Tid.Size = new System.Drawing.Size(166, 30);
+            this.Tid.TabIndex = 20;
+            this.Tid.Text = "";
+            // 
             // Ticket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,7 +332,6 @@
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox Tid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox FCode;
         private System.Windows.Forms.Label label7;
@@ -351,5 +350,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox PpassTb;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RichTextBox Tid;
     }
 }

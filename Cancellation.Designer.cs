@@ -31,11 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cancellation));
             this.CancelDGV = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.CanId = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,6 +42,8 @@
             this.Cancel = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
             this.CancelDate = new System.Windows.Forms.DateTimePicker();
+            this.TidCb = new System.Windows.Forms.ComboBox();
+            this.FcodeTb = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.CancelDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +51,7 @@
             // 
             this.CancelDGV.BackgroundColor = System.Drawing.Color.DarkCyan;
             this.CancelDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CancelDGV.GridColor = System.Drawing.Color.OrangeRed;
             this.CancelDGV.Location = new System.Drawing.Point(0, 416);
             this.CancelDGV.Name = "CancelDGV";
             this.CancelDGV.Size = new System.Drawing.Size(764, 215);
@@ -67,22 +68,6 @@
             this.label2.TabIndex = 58;
             this.label2.Text = "Date";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // richTextBox4
-            // 
-            this.richTextBox4.Location = new System.Drawing.Point(198, 258);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox4.TabIndex = 57;
-            this.richTextBox4.Text = "";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(538, 212);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 56;
             // 
             // label7
             // 
@@ -108,13 +93,13 @@
             this.label6.Text = "Flight Code";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // richTextBox1
+            // CanId
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(198, 207);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(166, 30);
-            this.richTextBox1.TabIndex = 53;
-            this.richTextBox1.Text = "";
+            this.CanId.Location = new System.Drawing.Point(198, 207);
+            this.CanId.Name = "CanId";
+            this.CanId.Size = new System.Drawing.Size(166, 30);
+            this.CanId.TabIndex = 53;
+            this.CanId.Text = "";
             // 
             // label1
             // 
@@ -125,7 +110,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 30);
             this.label1.TabIndex = 52;
-            this.label1.Text = "Cancelled";
+            this.label1.Text = "Cancel Id";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -176,6 +161,7 @@
             this.BackView.TabIndex = 68;
             this.BackView.Text = "Back";
             this.BackView.UseVisualStyleBackColor = false;
+            this.BackView.Click += new System.EventHandler(this.BackView_Click);
             // 
             // Cancel
             // 
@@ -189,6 +175,7 @@
             this.Cancel.TabIndex = 67;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Clear
             // 
@@ -210,12 +197,32 @@
             this.CancelDate.Size = new System.Drawing.Size(166, 20);
             this.CancelDate.TabIndex = 69;
             // 
+            // TidCb
+            // 
+            this.TidCb.FormattingEnabled = true;
+            this.TidCb.Location = new System.Drawing.Point(198, 267);
+            this.TidCb.Name = "TidCb";
+            this.TidCb.Size = new System.Drawing.Size(166, 21);
+            this.TidCb.TabIndex = 70;
+            this.TidCb.SelectionChangeCommitted += new System.EventHandler(this.TidCb_SelectionChangeCommitted);
+            // 
+            // FcodeTb
+            // 
+            this.FcodeTb.Enabled = false;
+            this.FcodeTb.Location = new System.Drawing.Point(538, 212);
+            this.FcodeTb.Name = "FcodeTb";
+            this.FcodeTb.Size = new System.Drawing.Size(166, 30);
+            this.FcodeTb.TabIndex = 71;
+            this.FcodeTb.Text = "";
+            // 
             // Cancellation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(735, 622);
+            this.Controls.Add(this.FcodeTb);
+            this.Controls.Add(this.TidCb);
             this.Controls.Add(this.CancelDate);
             this.Controls.Add(this.BackView);
             this.Controls.Add(this.Cancel);
@@ -223,17 +230,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CancelDGV);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox4);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.CanId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Cancellation";
             this.Text = "Cancellation";
+            this.Load += new System.EventHandler(this.Cancellation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CancelDGV)).EndInit();
             this.ResumeLayout(false);
 
@@ -242,11 +248,9 @@
         #endregion
         private System.Windows.Forms.DataGridView CancelDGV;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox CanId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
@@ -255,5 +259,7 @@
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.DateTimePicker CancelDate;
+        private System.Windows.Forms.ComboBox TidCb;
+        private System.Windows.Forms.RichTextBox FcodeTb;
     }
 }

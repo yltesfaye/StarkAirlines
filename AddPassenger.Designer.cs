@@ -48,6 +48,7 @@
             this.PassportTb = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.ViewPassengers = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // PassId
@@ -408,7 +409,7 @@
             this.button1.BackColor = System.Drawing.Color.MediumPurple;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkRed;
-            this.button1.Location = new System.Drawing.Point(267, 563);
+            this.button1.Location = new System.Drawing.Point(222, 563);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 36);
@@ -451,12 +452,27 @@
             this.ViewPassengers.UseVisualStyleBackColor = false;
             this.ViewPassengers.Click += new System.EventHandler(this.ViewPassengers_Click);
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.MediumPurple;
+            this.Back.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.ForeColor = System.Drawing.Color.DarkRed;
+            this.Back.Location = new System.Drawing.Point(340, 563);
+            this.Back.Margin = new System.Windows.Forms.Padding(0);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(96, 36);
+            this.Back.TabIndex = 34;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_clikc);
+            // 
             // AddPassenger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(501, 704);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.ViewPassengers);
             this.Controls.Add(this.PassportTb);
             this.Controls.Add(this.label8);
@@ -505,5 +521,6 @@
         private System.Windows.Forms.RichTextBox PassportTb;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button ViewPassengers;
+        private System.Windows.Forms.Button Back;
     }
 }

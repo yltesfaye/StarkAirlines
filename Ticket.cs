@@ -124,6 +124,13 @@ namespace StarkAirlines
             
         }
 
+        private void BackView_Click(object sender, EventArgs e)
+        {
+            Home home = new Home();
+            home.Show();
+            this.Hide();
+        }
+
         private void fetchPassenger()
         {
             Connect.Open();

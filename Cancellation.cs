@@ -85,8 +85,9 @@ namespace StarkAirlines
 
         private void BackView_Click(object sender, EventArgs e)
         {
-            CanId.Text = " ";
-            FcodeTb.Text = " ";
+            Home home = new Home();
+            home.Show();
+            this.Hide();
         }
         private void deleteTicket()
         {
@@ -142,6 +143,12 @@ namespace StarkAirlines
                 }
 
             }
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            CanId.Text = " ";
+            FcodeTb.Text = " ";
         }
     }
 }

@@ -189,6 +189,7 @@
             this.Clear.TabIndex = 66;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // CancelDate
             // 

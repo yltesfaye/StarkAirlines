@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.Fdate = new System.Windows.Forms.DateTimePicker();
             this.ViewFlights = new System.Windows.Forms.Button();
+            this.Back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 144);
+            this.panel1.Size = new System.Drawing.Size(506, 144);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -156,7 +157,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 144);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(146, 404);
+            this.panel3.Size = new System.Drawing.Size(151, 404);
             this.panel3.TabIndex = 11;
             // 
             // AddFlights
@@ -164,7 +165,7 @@
             this.AddFlights.BackColor = System.Drawing.Color.MediumPurple;
             this.AddFlights.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddFlights.ForeColor = System.Drawing.Color.DarkRed;
-            this.AddFlights.Location = new System.Drawing.Point(364, 441);
+            this.AddFlights.Location = new System.Drawing.Point(292, 441);
             this.AddFlights.Margin = new System.Windows.Forms.Padding(0);
             this.AddFlights.Name = "AddFlights";
             this.AddFlights.Size = new System.Drawing.Size(96, 36);
@@ -178,7 +179,7 @@
             this.ResetFlight.BackColor = System.Drawing.Color.MediumPurple;
             this.ResetFlight.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetFlight.ForeColor = System.Drawing.Color.DarkRed;
-            this.ResetFlight.Location = new System.Drawing.Point(202, 441);
+            this.ResetFlight.Location = new System.Drawing.Point(180, 441);
             this.ResetFlight.Margin = new System.Windows.Forms.Padding(0);
             this.ResetFlight.Name = "ResetFlight";
             this.ResetFlight.Size = new System.Drawing.Size(96, 36);
@@ -234,12 +235,27 @@
             this.ViewFlights.UseVisualStyleBackColor = false;
             this.ViewFlights.Click += new System.EventHandler(this.ViewFlights_Click);
             // 
+            // Back
+            // 
+            this.Back.BackColor = System.Drawing.Color.MediumPurple;
+            this.Back.Font = new System.Drawing.Font("Franklin Gothic Heavy", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.ForeColor = System.Drawing.Color.DarkRed;
+            this.Back.Location = new System.Drawing.Point(401, 441);
+            this.Back.Margin = new System.Windows.Forms.Padding(0);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(96, 36);
+            this.Back.TabIndex = 17;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = false;
+            this.Back.Click += new System.EventHandler(this.Back_Clikc);
+            // 
             // FlightTbl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(500, 548);
+            this.ClientSize = new System.Drawing.Size(506, 548);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.ViewFlights);
             this.Controls.Add(this.Fdate);
             this.Controls.Add(this.label6);
@@ -283,5 +299,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker Fdate;
         private System.Windows.Forms.Button ViewFlights;
+        private System.Windows.Forms.Button Back;
     }
 }

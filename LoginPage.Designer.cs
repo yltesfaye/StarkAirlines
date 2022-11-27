@@ -36,8 +36,8 @@
             this.ResetLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.UidTb = new System.Windows.Forms.RichTextBox();
+            this.PassTb = new System.Windows.Forms.RichTextBox();
             this.Exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -84,6 +84,7 @@
             this.Login.TabIndex = 6;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = false;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // ResetLogin
             // 
@@ -95,6 +96,7 @@
             this.ResetLogin.TabIndex = 7;
             this.ResetLogin.Text = "Reset";
             this.ResetLogin.UseVisualStyleBackColor = false;
+            this.ResetLogin.Click += new System.EventHandler(this.ResetLogin_Click);
             // 
             // label2
             // 
@@ -116,21 +118,21 @@
             this.panel3.Size = new System.Drawing.Size(150, 337);
             this.panel3.TabIndex = 0;
             // 
-            // richTextBox1
+            // UidTb
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(308, 198);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(159, 29);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.UidTb.Location = new System.Drawing.Point(308, 198);
+            this.UidTb.Name = "UidTb";
+            this.UidTb.Size = new System.Drawing.Size(159, 29);
+            this.UidTb.TabIndex = 12;
+            this.UidTb.Text = "";
             // 
-            // richTextBox2
+            // PassTb
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(308, 265);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(159, 29);
-            this.richTextBox2.TabIndex = 13;
-            this.richTextBox2.Text = "";
+            this.PassTb.Location = new System.Drawing.Point(308, 265);
+            this.PassTb.Name = "PassTb";
+            this.PassTb.Size = new System.Drawing.Size(159, 29);
+            this.PassTb.TabIndex = 13;
+            this.PassTb.Text = "";
             // 
             // Exit
             // 
@@ -150,8 +152,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(500, 544);
             this.Controls.Add(this.Exit);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.PassTb);
+            this.Controls.Add(this.UidTb);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.ResetLogin);
@@ -162,6 +164,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginPage";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,8 +179,8 @@
         private System.Windows.Forms.Button ResetLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox UidTb;
+        private System.Windows.Forms.RichTextBox PassTb;
         private System.Windows.Forms.Button Exit;
     }
 }

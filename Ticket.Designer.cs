@@ -199,6 +199,7 @@
             this.BackView.TabIndex = 52;
             this.BackView.Text = "Back";
             this.BackView.UseVisualStyleBackColor = false;
+            this.BackView.Click += new System.EventHandler(this.BackView_Click);
             // 
             // Book
             // 

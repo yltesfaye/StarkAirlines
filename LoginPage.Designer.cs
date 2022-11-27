@@ -39,6 +39,7 @@
             this.UidTb = new System.Windows.Forms.RichTextBox();
             this.PassTb = new System.Windows.Forms.RichTextBox();
             this.Exit = new System.Windows.Forms.Button();
+            this.CreatAcc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +79,7 @@
             // 
             this.Login.BackColor = System.Drawing.Color.NavajoWhite;
             this.Login.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Login.Location = new System.Drawing.Point(346, 330);
+            this.Login.Location = new System.Drawing.Point(346, 320);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(121, 34);
             this.Login.TabIndex = 6;
@@ -90,7 +91,7 @@
             // 
             this.ResetLogin.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ResetLogin.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ResetLogin.Location = new System.Drawing.Point(172, 330);
+            this.ResetLogin.Location = new System.Drawing.Point(172, 320);
             this.ResetLogin.Name = "ResetLogin";
             this.ResetLogin.Size = new System.Drawing.Size(143, 34);
             this.ResetLogin.TabIndex = 7;
@@ -138,12 +139,24 @@
             // 
             this.Exit.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.Exit.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(255, 391);
+            this.Exit.Location = new System.Drawing.Point(254, 429);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(143, 34);
             this.Exit.TabIndex = 14;
             this.Exit.Text = "Exit";
             this.Exit.UseVisualStyleBackColor = false;
+            // 
+            // CreatAcc
+            // 
+            this.CreatAcc.BackColor = System.Drawing.Color.NavajoWhite;
+            this.CreatAcc.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CreatAcc.Location = new System.Drawing.Point(254, 369);
+            this.CreatAcc.Name = "CreatAcc";
+            this.CreatAcc.Size = new System.Drawing.Size(160, 44);
+            this.CreatAcc.TabIndex = 20;
+            this.CreatAcc.Text = "Create an Account";
+            this.CreatAcc.UseVisualStyleBackColor = false;
+            this.CreatAcc.Click += new System.EventHandler(this.CreatAcc_Click);
             // 
             // LoginPage
             // 
@@ -151,6 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(500, 544);
+            this.Controls.Add(this.CreatAcc);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.PassTb);
             this.Controls.Add(this.UidTb);
@@ -182,5 +196,6 @@
         private System.Windows.Forms.RichTextBox UidTb;
         private System.Windows.Forms.RichTextBox PassTb;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button CreatAcc;
     }
 }

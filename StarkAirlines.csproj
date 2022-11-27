@@ -61,6 +61,12 @@
     <Compile Include="Cancellation.Designer.cs">
       <DependentUpon>Cancellation.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAccount.Designer.cs">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="FlightTbl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cancellation.resx">
       <DependentUpon>Cancellation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FlightTbl.resx">
       <DependentUpon>FlightTbl.cs</DependentUpon>

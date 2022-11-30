@@ -49,8 +49,8 @@ namespace StarkAirlines
             //{
             //    MessageBox.Show("Wrong Username and Password");
             //}
-            SqlCommand cmd = new SqlCommand("select * from Userlogins where UserName=@UserName and Password=@Password", Connect);
-            cmd.Parameters.AddWithValue("@UserName", Username.Text);
+            SqlCommand cmd = new SqlCommand("select * from UserLogins where UserName=@UserName and Password=@Password", Connect);
+            cmd.Parameters.AddWithValue("@UserName", UidTb.Text);
             cmd.Parameters.AddWithValue("@Password", PassTb.Text);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -75,7 +75,7 @@ namespace StarkAirlines
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
-
+                
         }
 
         private void CreatAcc_Click(object sender, EventArgs e)

@@ -36,10 +36,13 @@ namespace StarkAirlines
                 {
                     Connect.Open();
                     AccountCounter++;
-                    string query = "Insert into UserLogins values ("+AccountCounter +", '" + UidCA.Text + "', '" + PassCA.Text + "', '" + NameCA.Text + "')";
+                    string query = "Insert into UserLogins values ('" + UidCA.Text + "', '" + PassCA.Text + "', '" + NameCA.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Connect);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Account Created Successfully");
+                    LoginPage login = new LoginPage();
+                    login.Show();
+                    this.Hide();
                     Connect.Close();
 
                 }

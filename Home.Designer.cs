@@ -59,42 +59,50 @@
             // 
             // Flights
             // 
-            this.Flights.Location = new System.Drawing.Point(29, 305);
+            this.Flights.BackColor = System.Drawing.Color.Turquoise;
+            this.Flights.Font = new System.Drawing.Font("Kristen ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Flights.Location = new System.Drawing.Point(78, 192);
             this.Flights.Name = "Flights";
             this.Flights.Size = new System.Drawing.Size(96, 37);
             this.Flights.TabIndex = 0;
             this.Flights.Text = "Flights";
-            this.Flights.UseVisualStyleBackColor = true;
+            this.Flights.UseVisualStyleBackColor = false;
             this.Flights.Click += new System.EventHandler(this.Flights_Click);
             // 
             // Passengers
             // 
-            this.Passengers.Location = new System.Drawing.Point(147, 305);
+            this.Passengers.BackColor = System.Drawing.Color.Turquoise;
+            this.Passengers.Font = new System.Drawing.Font("Kristen ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Passengers.Location = new System.Drawing.Point(302, 192);
             this.Passengers.Name = "Passengers";
-            this.Passengers.Size = new System.Drawing.Size(96, 37);
+            this.Passengers.Size = new System.Drawing.Size(153, 37);
             this.Passengers.TabIndex = 4;
             this.Passengers.Text = "Passengers";
-            this.Passengers.UseVisualStyleBackColor = true;
+            this.Passengers.UseVisualStyleBackColor = false;
             this.Passengers.Click += new System.EventHandler(this.Passengers_Click);
             // 
             // Tickets
             // 
-            this.Tickets.Location = new System.Drawing.Point(263, 305);
+            this.Tickets.BackColor = System.Drawing.Color.Turquoise;
+            this.Tickets.Font = new System.Drawing.Font("Kristen ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tickets.Location = new System.Drawing.Point(78, 275);
             this.Tickets.Name = "Tickets";
             this.Tickets.Size = new System.Drawing.Size(96, 37);
             this.Tickets.TabIndex = 5;
             this.Tickets.Text = "Tickets";
-            this.Tickets.UseVisualStyleBackColor = true;
+            this.Tickets.UseVisualStyleBackColor = false;
             this.Tickets.Click += new System.EventHandler(this.Tickets_click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(384, 305);
+            this.button4.BackColor = System.Drawing.Color.Turquoise;
+            this.button4.Font = new System.Drawing.Font("Kristen ITC", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(302, 275);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 37);
+            this.button4.Size = new System.Drawing.Size(170, 37);
             this.button4.TabIndex = 6;
             this.button4.Text = "Cancellation";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.Cancel_click);
             // 
             // Home

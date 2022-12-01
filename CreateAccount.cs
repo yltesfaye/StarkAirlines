@@ -26,32 +26,10 @@ namespace StarkAirlines
         public int AccountCounter = 1;
         private void CreatAcc_Click(object sender, EventArgs e)
         {
-            if (Username.Text == "" || PassCA.Text == "" || NameCA.Text == "")
-            {
-                MessageBox.Show("Missing Information;");
-            }
-            else
-            {
-                try
-                {
-                    Connect.Open();
-                    AccountCounter++;
-                    string query = "Insert into UserLogins values ('" + UidCA.Text + "', '" + PassCA.Text + "', '" + NameCA.Text + "')";
-                    SqlCommand cmd = new SqlCommand(query, Connect);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Account Created Successfully");
-                    LoginPage login = new LoginPage();
-                    login.Show();
-                    this.Hide();
-                    Connect.Close();
+            Account newAccount = new Account(NameCA, UidCA, PassCA.Text);
 
-                }
-                catch (Exception Excpt)
-                {
-                    MessageBox.Show(Excpt.Message);
-                }
-
-            }
+            newAccount.CreateAccount();
+            this.Hide();
             
         }
     }

@@ -31,46 +31,15 @@ namespace StarkAirlines
 
         private void ResetLogin_Click(object sender, EventArgs e)
         {
-            UidTb.Text = " ";
-            PassTb.Text = " ";
+            Login Account = new Login(UidTb, PassTb);
+            Account.Reset();
         }
 
         private void Login_Click(object sender, EventArgs e)
         {
-            //if(UidTb.Text == " " || PassTb.Text == " ")
-            //{
-            //    MessageBox.Show("Enter The Username and Password");
-            //} else if(UidTb.Text == "Admin" && PassTb.Text == "Admin")
-            //{
-            //    Home home = new Home();
-            //    home.Show();
-            //    this.Hide();
-            //} else
-            //{
-            //    MessageBox.Show("Wrong Username and Password");
-            //}
-            SqlCommand cmd = new SqlCommand("select * from UserLogins where UserName=@UserName and Password=@Password", Connect);
-            cmd.Parameters.AddWithValue("@UserName", UidTb.Text);
-            cmd.Parameters.AddWithValue("@Password", PassTb.Text);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            Connect.Open();
-            int i = cmd.ExecuteNonQuery();
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Login Successful!");
-                Home login = new Home();
-                login.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Please Enter Correct Username and Password");
-            }
-
-
-            Connect.Close();
+            Login Account = new Login(UidTb.Text, PassTb.Text);
+            Account.loginAccount();
+            this.Hide();
         }
 
         private void LoginPage_Load(object sender, EventArgs e)

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace StarkAirlines
 {
-    public class Account: Sql
+    public class Account : Sql
     {
         private RichTextBox _name;
         private RichTextBox _username;
@@ -23,8 +23,8 @@ namespace StarkAirlines
         }
         public RichTextBox Name { get { return _name; } }
         public RichTextBox Username { get { return _username; } }
-        public string Password { get { return _password; } }        
-       
+        public string Password { get { return _password; } }
+
 
         public void CreateAccount()
         {
@@ -37,7 +37,7 @@ namespace StarkAirlines
                 try
                 {
                     Connection.Open();
-                    string query = "Insert into UserLogins values ('" + Username.Text+ "', '" + Password + "', '" + Name.Text + "')";
+                    string query = "Insert into UserLogins values ('" + Username.Text + "', '" + Password + "', '" + Name.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Connection);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Account Created Successfully");

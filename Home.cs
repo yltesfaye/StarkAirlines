@@ -33,7 +33,7 @@ namespace StarkAirlines
 
         private void Tickets_click(object sender, EventArgs e)
         {
-            Ticket ticket = new Ticket();
+            TicketPage ticket = new TicketPage();
             ticket.Show();
             this.Hide();
         }

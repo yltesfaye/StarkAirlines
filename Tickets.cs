@@ -6,43 +6,66 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
+
+
 namespace StarkAirlines
 {
-    public class Tickets : Sql
+    public class Tickets : Sql, IPopulate, IFillPassenger, IFillFlight, IFetchPassengers
     {
-        private string _username;
-        private string _password;
-        private RichTextBox _usernameRTB;
-        private RichTextBox _passwordRTB;
+        string _ticketId;
+        string _flightCode;
+        string _passengerID;
+        string _passengerName;
+        string _passengerPassport;
+        string _passengerNationality;
+        string _ticketAmount;
+        RichTextBox ticketId;
+        RichTextBox PassengerNameRTB;
+        RichTextBox Nationality;
+        RichTextBox Amount;
+        RichTextBox PassportNumber;
+
+        public string TicketId { get => _ticketId; set => _ticketId = value; }
+        public string FlightCode { get => _flightCode; set => _flightCode = value; }
+        public string PassengerID { get => _passengerID; set => _passengerID = value; }
+        public string PassengerName { get => _passengerName; set => _passengerName = value; }
+        public string PassengerPassport { get => _passengerPassport; set => _passengerPassport = value; }
+        public string PassengerNationality { get => _passengerNationality; set => _passengerNationality = value; }
+        public string TicketAmount { get => _ticketAmount; set => _ticketAmount = value; }
+        public RichTextBox TicketId1 { get => ticketId; set => ticketId = value; }
+        public RichTextBox PassengerNameRTB1 { get => PassengerNameRTB; set => PassengerNameRTB = value; }
+        public RichTextBox Nationality1 { get => Nationality; set => Nationality = value; }
+        public RichTextBox Amount1 { get => Amount; set => Amount = value; }
+        public RichTextBox PassportNumber1 { get => PassportNumber; set => PassportNumber = value; }
 
 
-        public Login(String Username, string Password)
+        public Tickets()
         {
-            _username = Username;
-            _password = Password;
+
+        }
+        public Tickets(string ticketId, string flightCode, string passengerID, string passengerName, string passengerPassport, string passengerNationality, string ticketAmount)
+        {
+            TicketId = ticketId;
+            FlightCode = flightCode;
+            PassengerID = passengerID;
+            PassengerName = passengerName;
+            PassengerPassport = passengerPassport;
+            PassengerNationality = passengerNationality;
+            TicketAmount = ticketAmount;
+           
+        }
+        public Tickets(RichTextBox ticketId, RichTextBox PassengerName, RichTextBox Nationality, RichTextBox Amount, RichTextBox PassportNumber)
+        {
+            this.PassengerNameRTB = PassengerName;
+            this.Nationality = Nationality;
+            this.Amount = Amount;
+            this.PassportNumber = PassportNumber;
         }
 
-        public Login(RichTextBox Username, RichTextBox Password)
+
+        public void Book()
         {
-            _usernameRTB = Username;
-            _passwordRTB = Password;
-        }
-        public string Username { get { return _username; } set { value = _username; } }
-        public string Password { get { return _password; } set { value = _password; } }
-
-        public RichTextBox UsernameRTB { get { return _usernameRTB; } set { value = _usernameRTB; } }
-        public RichTextBox PasswordRTB { get { return _passwordRTB; } set { value = _passwordRTB; } }
-
-        public void Reset()
-        {
-            UsernameRTB.Clear();
-            PasswordRTB.Clear();
-        }
-
-
-        public void loginAccount()
-        {
-            if (Username == "" || Password == "")
+            if (TicketId == "" || PassengerName == "")
             {
                 MessageBox.Show("Missing Information;");
             }
@@ -50,28 +73,15 @@ namespace StarkAirlines
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("select * from UserLogins where UserName=@UserName and Password=@Password", Connection);
-                    cmd.Parameters.AddWithValue("@UserName", Username);
-                    cmd.Parameters.AddWithValue("@Password", Password);
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
                     Connection.Open();
-                    int i = cmd.ExecuteNonQuery();
-                    if (dt.Rows.Count > 0)
-                    {
-                        MessageBox.Show("Login Successful!");
-                        Home login = new Home();
-                        login.Show();
+                    string query = "Insert into TicketTbl values (" + TicketId + ", '" + FlightCode + "', '" + PassengerID + "', '" + PassengerName + "', '" + PassengerPassport + "', '" + PassengerNationality + "', " + TicketAmount + ")";
+                    SqlCommand cmd = new SqlCommand(query, Connection);
+                    cmd.ExecuteNonQuery();
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Enter Correct Username and Password");
-                    }
-
+                    MessageBox.Show("Ticket Booked Successfully");
 
                     Connection.Close();
+                    
 
                 }
                 catch (Exception Excpt)
@@ -80,8 +90,19 @@ namespace StarkAirlines
                 }
 
             }
+
         }
-        private void Populate()
+
+        public void Reset()
+        {
+            TicketId1.Clear();
+            PassengerNameRTB.Clear();
+            Nationality.Clear();
+            Amount.Clear();
+            PassportNumber.Clear();
+        }
+
+        public void populate(DataGridView data)
         {
             Connection.Open();
             string query = "select * from TicketTbl";
@@ -89,37 +110,68 @@ namespace StarkAirlines
             SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             var ds = new DataSet();
             adapter.Fill(ds);
-            TicketDGV.DataSource = ds.Tables[0];
+            data.DataSource = ds.Tables[0];
             Connection.Close();
         }
 
-        private void Book()
+        public void fillPassengerInformation(ComboBox PassengerID)
         {
-            if (Tid.Text == "" || PNameTb.Text == "")
-            {
-                MessageBox.Show("Missing Information;");
-            }
-            else
-            {
-                try
-                {
-                    Connect.Open();
-                    string query = "Insert into TicketTbl values (" + Tid.Text + ", '" + FCode.SelectedValue.ToString() + "', '" + PidCb.SelectedValue.ToString() + "', '" + PNameTb.Text + "', '" + PpassTb.Text + "', '" + PnatTb.Text + "', " + PamtTb.Text + ")";
-                    SqlCommand cmd = new SqlCommand(query, Connect);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Ticket Booked Successfully");
-
-                    Connect.Close();
-                    Populate();
-
-                }
-                catch (Exception Excpt)
-                {
-                    MessageBox.Show(Excpt.Message);
-                }
-
-            }
+            Connection.Open();
+            SqlCommand cmd = new SqlCommand("select PassId from PassengerTbl", Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Columns.Add("PassId", typeof(int));
+            table.Load(reader);
+            PassengerID.ValueMember = "PassId";
+            PassengerID.DataSource = table;
+            Connection.Close();
         }
+
+        public void fillFlightCode(ComboBox FlightCode)
+        {
+            Connection.Open();
+            SqlCommand cmd = new SqlCommand("select Fcode from FlightTbl", Connection);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Columns.Add("Fcode", typeof(string));
+            table.Load(reader);
+            FlightCode.ValueMember = "Fcode";
+            FlightCode.DataSource = table;
+            Connection.Close();
+        }
+        private string PName;
+        private string Ppass;
+        private string Pnat;
+        public void fetchPassenger(ComboBox FPassengerId, RichTextBox FPassengerName, RichTextBox FPassengerPassword, RichTextBox FPassengerNationality)
+        {
+
+            Connection.Open();
+
+            string query = "select * from PassengerTbl where PassId=" + FPassengerId.SelectedValue.ToString() + "";
+            SqlCommand cmd = new SqlCommand(query, Connection);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                PName = dr["PassName"].ToString();
+                Ppass = dr["Passport"].ToString();
+                Pnat = dr["PassAd"].ToString();
+                FPassengerName.Text = PName;
+                FPassengerPassword.Text = Ppass;
+                FPassengerNationality.Text = Pnat;
+
+                //  page = Convert.ToInt32(dr["PassAd"].ToString());
+
+            }
+
+            Connection.Close();
+
+        }
+       
+
     }
 }

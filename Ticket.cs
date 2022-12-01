@@ -86,6 +86,10 @@ namespace StarkAirlines
 
         private void Book_Click(object sender, EventArgs e)
         {
+
+
+            Tickets newTicket = new Tickets(sti); 
+
             if (Tid.Text == "" || PNameTb.Text == "")
             {
                 MessageBox.Show("Missing Information;");

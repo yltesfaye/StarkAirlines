@@ -118,10 +118,7 @@ namespace StarkAirlines
 
         private void Reset_Click(object sender, EventArgs e)
         {
-            FcodeTb.Text = " ";
-            SeatNum.Text = " ";
-            SrcCb.Items.Remove(SrcCb.SelectedItem);
-            DstCb.Items.Remove(DstCb.SelectedItem);
+           Reset
         }
     }
 }

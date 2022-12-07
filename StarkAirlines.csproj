@@ -68,6 +68,7 @@
     <Compile Include="CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flights.cs" />
     <Compile Include="IFetchPassengers.cs" />
     <Compile Include="IFillFlight.cs" />
     <Compile Include="IFillPassenger.cs" />

@@ -44,7 +44,7 @@ namespace StarkAirlines
             FlightGrid = flightgrid;
         }
 
-        public void Fill_Table()
+        public void Fill_Table(RichTextBox FlightCode, RichTextBox SeatNum,ComboBox Source ,ComboBox Destination)
         {
             FlightCode.Text = FlightGrid.SelectedRows[0].Cells[0].Value.ToString();
             SeatNum.Text = FlightGrid.SelectedRows[0].Cells[1].Value.ToString();
@@ -65,7 +65,7 @@ namespace StarkAirlines
             Connection.Close();
         }
 
-        public void Delete()
+        public void Delete(RichTextBox FlightCdoe, DataGridView FlightGrid)
         {
             if (FlightCode.Text == "")
             {
@@ -93,7 +93,7 @@ namespace StarkAirlines
 
         }
 
-        public void Update()
+        public void Update(RichTextBox FlightCode, RichTextBox SeatNum, ComboBox Source, ComboBox Destination, DateTimePicker Date, DataGridView FlightGrid )
         {
             if (FlightCode.Text == "" || SeatNum.Text == "")
             {
@@ -127,12 +127,24 @@ namespace StarkAirlines
             FlightTbl AddFlight = new FlightTbl();
             AddFlight.Show();
         }
-        public void Reset()
+        public void Reset(RichTextBox FlightCode, RichTextBox SeatNum, ComboBox Source, ComboBox Destination)
         {
             FlightCode.Text = " ";
             SeatNum.Text = " ";
             Source.Items.Remove(Source.SelectedItem);
             Destination.Items.Remove(Destination.SelectedItem);
+        }
+
+        public void Populate(DataGridView FlightGrid)
+        {
+            Connection.Open();
+            string query = "select * from FlightTbl";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, Connection);
+            SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
+            var ds = new DataSet();
+            adapter.Fill(ds);
+            FlightGrid.DataSource = ds.Tables[0];
+            Connection.Close();
         }
     }
 }

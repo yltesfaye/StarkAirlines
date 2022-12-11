@@ -35,6 +35,7 @@ namespace StarkAirlines
         {
             this._passengerId = passengerId;
         }
+
         public Passengers(RichTextBox passengerId, RichTextBox passengerName, RichTextBox passportNumber, RichTextBox passportAddress, ComboBox country, ComboBox gender, RichTextBox phoneNumber)
         {
             _passengerId = passengerId;
@@ -44,6 +45,11 @@ namespace StarkAirlines
             _country = country;
             _gender = gender;
             _phoneNumber = phoneNumber;
+        }
+
+        public Passengers(DataGridView passengerGrid)
+        {
+            _passengerGrid = passengerGrid;
         }
 
         public RichTextBox PassengerId { get => _passengerId; set => _passengerId = value; }
@@ -120,14 +126,14 @@ namespace StarkAirlines
 
             }
         }
-            public void  Fill()
+            public void  Fill(RichTextBox Id, RichTextBox Name, RichTextBox PassNumber, RichTextBox Address, ComboBox Count, ComboBox Gen)
         {
-            PassengerId.Text = PassengerGrid.SelectedRows[0].Cells[0].Value.ToString();
-            PassengerName.Text = PassengerGrid.SelectedRows[0].Cells[1].Value.ToString();
-            PassportNumber.Text = PassengerGrid.SelectedRows[0].Cells[2].Value.ToString();
-            PassengerAddress.Text = PassengerGrid.SelectedRows[0].Cells[3].Value.ToString();
-            Country.SelectedItem = PassengerGrid.SelectedRows[0].Cells[4].Value.ToString();
-            Gender.SelectedItem = PassengerGrid.SelectedRows[0].Cells[5].Value.ToString();
+            Id.Text = PassengerGrid.SelectedRows[0].Cells[0].Value.ToString();
+            Name.Text = PassengerGrid.SelectedRows[0].Cells[1].Value.ToString();
+            PassNumber.Text = PassengerGrid.SelectedRows[0].Cells[2].Value.ToString();
+            Address.Text = PassengerGrid.SelectedRows[0].Cells[3].Value.ToString();
+            Count.SelectedItem = PassengerGrid.SelectedRows[0].Cells[4].Value.ToString();
+            Gen.SelectedItem = PassengerGrid.SelectedRows[0].Cells[5].Value.ToString();
         }
         public void Update()
         {

@@ -38,6 +38,9 @@ namespace StarkAirlines
 
         private void ViewPassenger_Load(object sender, EventArgs e)
         {
+            Passengers passenger = new Passengers(PassengerDGV);
+            passenger.populate(PassengerDGV);
+
         }
 
         private void BackView_Click(object sender, EventArgs e)
@@ -56,10 +59,8 @@ namespace StarkAirlines
         {
 
             Passengers passenger = new Passengers(PidTb, PnameTb, PpassTb, PaddTb, NatCb, GendCb, PphoneTB, PassengerDGV);
-            passenger.Fill();
-           
-
-
+            passenger.Fill(PidTb,PnameTb,PphoneTB,PaddTb,NatCb,GendCb);
+            passenger.populate(PassengerDGV);
 
         }
 

@@ -37,9 +37,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.UidTb = new System.Windows.Forms.RichTextBox();
-            this.PassTb = new System.Windows.Forms.RichTextBox();
             this.Exit = new System.Windows.Forms.Button();
             this.CreatAcc = new System.Windows.Forms.Button();
+            this.PassTb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // panel1
@@ -135,15 +135,6 @@
             this.UidTb.TabIndex = 12;
             this.UidTb.Text = "";
             // 
-            // PassTb
-            // 
-            this.PassTb.Location = new System.Drawing.Point(462, 408);
-            this.PassTb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PassTb.Name = "PassTb";
-            this.PassTb.Size = new System.Drawing.Size(236, 42);
-            this.PassTb.TabIndex = 13;
-            this.PassTb.Text = "";
-            // 
             // Exit
             // 
             this.Exit.BackColor = System.Drawing.Color.PaleGoldenrod;
@@ -169,15 +160,24 @@
             this.CreatAcc.UseVisualStyleBackColor = false;
             this.CreatAcc.Click += new System.EventHandler(this.CreatAcc_Click);
             // 
+            // PassTb
+            // 
+            this.PassTb.Location = new System.Drawing.Point(462, 406);
+            this.PassTb.Multiline = true;
+            this.PassTb.Name = "PassTb";
+            this.PassTb.Size = new System.Drawing.Size(236, 42);
+            this.PassTb.TabIndex = 21;
+            this.PassTb.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
             // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(750, 837);
+            this.Controls.Add(this.PassTb);
             this.Controls.Add(this.CreatAcc);
             this.Controls.Add(this.Exit);
-            this.Controls.Add(this.PassTb);
             this.Controls.Add(this.UidTb);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label2);
@@ -206,8 +206,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RichTextBox UidTb;
-        private System.Windows.Forms.RichTextBox PassTb;
         private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.Button CreatAcc;
+        private System.Windows.Forms.TextBox PassTb;
     }
 }

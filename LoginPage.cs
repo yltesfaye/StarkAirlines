@@ -31,7 +31,7 @@ namespace StarkAirlines
 
         private void ResetLogin_Click(object sender, EventArgs e)
         {
-            Login Account = new Login(UidTb, PassTb);
+            Login Account = new Login(UidTb.Text, PassTb.Text);
             Account.Reset();
         }
 
@@ -52,6 +52,11 @@ namespace StarkAirlines
             CreateAccount create = new CreateAccount();
             create.Show();
             this.Hide();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            PassTb.PasswordChar = '*';
         }
     }
 }

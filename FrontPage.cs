@@ -56,7 +56,7 @@ namespace StarkAirlines
         int startpoint = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            startpoint += 2;
+            startpoint += 10;
             Progressbar.Value = startpoint;
             if(Progressbar.Value == 100)
             {

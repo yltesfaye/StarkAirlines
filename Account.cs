@@ -12,6 +12,7 @@ namespace StarkAirlines
     {
         private RichTextBox _name;
         private RichTextBox _username;
+        private TextBox _managercode;
         private string _password;
 
 
@@ -21,10 +22,18 @@ namespace StarkAirlines
             _username = Username;
             _password = Password;
         }
+        public Account(RichTextBox Name, RichTextBox Username, string Password, TextBox ManagerCode )
+        {
+            _name = Name;
+            _username = Username;
+            _password = Password;
+            _managercode = ManagerCode;
+        }
         public RichTextBox Name { get { return _name; } }
         public RichTextBox Username { get { return _username; } }
         public string Password { get { return _password; } }
 
+        public TextBox Managercode { get => _managercode; set => _managercode = value; }
 
         public void CreateAccount()
         {

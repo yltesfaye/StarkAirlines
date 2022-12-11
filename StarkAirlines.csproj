@@ -120,6 +120,7 @@
     <Compile Include="ViewPassenger.Designer.cs">
       <DependentUpon>ViewPassenger.cs</DependentUpon>
     </Compile>
+    <Compile Include="Passengers.cs" />
     <EmbeddedResource Include="AddPassenger.resx">
       <DependentUpon>AddPassenger.cs</DependentUpon>
     </EmbeddedResource>

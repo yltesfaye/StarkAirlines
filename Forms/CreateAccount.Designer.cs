@@ -45,29 +45,26 @@
             // 
             // PassCA
             // 
-            this.PassCA.Location = new System.Drawing.Point(459, 503);
-            this.PassCA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PassCA.Location = new System.Drawing.Point(316, 304);
             this.PassCA.Name = "PassCA";
-            this.PassCA.Size = new System.Drawing.Size(236, 42);
+            this.PassCA.Size = new System.Drawing.Size(159, 29);
             this.PassCA.TabIndex = 23;
             this.PassCA.Text = "";
             // 
             // UidCA
             // 
-            this.UidCA.Location = new System.Drawing.Point(459, 411);
-            this.UidCA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.UidCA.Location = new System.Drawing.Point(316, 244);
             this.UidCA.Name = "UidCA";
-            this.UidCA.Size = new System.Drawing.Size(236, 42);
+            this.UidCA.Size = new System.Drawing.Size(159, 29);
             this.UidCA.TabIndex = 22;
             this.UidCA.Text = "";
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Location = new System.Drawing.Point(0, 243);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Location = new System.Drawing.Point(12, 150);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(225, 518);
+            this.panel3.Size = new System.Drawing.Size(135, 337);
             this.panel3.TabIndex = 15;
             // 
             // label2
@@ -76,10 +73,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label2.Location = new System.Drawing.Point(255, 503);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(180, 304);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 40);
+            this.label2.Size = new System.Drawing.Size(129, 26);
             this.label2.TabIndex = 21;
             this.label2.Text = "Password";
             // 
@@ -87,10 +83,9 @@
             // 
             this.CreatAcc.BackColor = System.Drawing.Color.NavajoWhite;
             this.CreatAcc.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreatAcc.Location = new System.Drawing.Point(379, 681);
-            this.CreatAcc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CreatAcc.Location = new System.Drawing.Point(262, 418);
             this.CreatAcc.Name = "CreatAcc";
-            this.CreatAcc.Size = new System.Drawing.Size(251, 59);
+            this.CreatAcc.Size = new System.Drawing.Size(167, 38);
             this.CreatAcc.TabIndex = 19;
             this.CreatAcc.Text = "Create an Account";
             this.CreatAcc.UseVisualStyleBackColor = false;
@@ -102,10 +97,9 @@
             this.Username.BackColor = System.Drawing.Color.Transparent;
             this.Username.Font = new System.Drawing.Font("Lucida Fax", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Username.ForeColor = System.Drawing.Color.CadetBlue;
-            this.Username.Location = new System.Drawing.Point(255, 415);
-            this.Username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Username.Location = new System.Drawing.Point(180, 247);
             this.Username.Name = "Username";
-            this.Username.Size = new System.Drawing.Size(203, 40);
+            this.Username.Size = new System.Drawing.Size(132, 26);
             this.Username.TabIndex = 18;
             this.Username.Text = "Username";
             // 
@@ -113,30 +107,27 @@
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 771);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(0, 488);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(760, 115);
+            this.panel2.Size = new System.Drawing.Size(501, 75);
             this.panel2.TabIndex = 17;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(760, 222);
+            this.panel1.Size = new System.Drawing.Size(501, 144);
             this.panel1.TabIndex = 16;
             // 
             // NameCA
             // 
-            this.NameCA.Location = new System.Drawing.Point(459, 323);
-            this.NameCA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NameCA.Location = new System.Drawing.Point(316, 187);
             this.NameCA.Name = "NameCA";
-            this.NameCA.Size = new System.Drawing.Size(236, 42);
+            this.NameCA.Size = new System.Drawing.Size(159, 29);
             this.NameCA.TabIndex = 25;
             this.NameCA.Text = "";
             // 
@@ -146,19 +137,17 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label1.Location = new System.Drawing.Point(255, 328);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(180, 190);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 40);
+            this.label1.Size = new System.Drawing.Size(80, 26);
             this.label1.TabIndex = 24;
             this.label1.Text = "Name";
             // 
             // ManCodeTB
             // 
-            this.ManCodeTB.Location = new System.Drawing.Point(556, 592);
-            this.ManCodeTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ManCodeTB.Location = new System.Drawing.Point(381, 362);
             this.ManCodeTB.Name = "ManCodeTB";
-            this.ManCodeTB.Size = new System.Drawing.Size(108, 42);
+            this.ManCodeTB.Size = new System.Drawing.Size(73, 29);
             this.ManCodeTB.TabIndex = 27;
             this.ManCodeTB.Text = "";
             // 
@@ -168,19 +157,18 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.CadetBlue;
-            this.label3.Location = new System.Drawing.Point(255, 594);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(180, 363);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(280, 40);
+            this.label3.Size = new System.Drawing.Size(186, 26);
             this.label3.TabIndex = 26;
             this.label3.Text = "Manager Code";
             // 
             // CreateAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(760, 886);
+            this.ClientSize = new System.Drawing.Size(501, 563);
             this.Controls.Add(this.ManCodeTB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NameCA);
@@ -194,9 +182,10 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CreateAccount";
             this.Text = "CreateAccount";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateAccount_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CreateAccount_FormClosed);
             this.Load += new System.EventHandler(this.CreateAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

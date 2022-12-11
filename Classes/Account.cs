@@ -12,8 +12,9 @@ namespace StarkAirlines
     {
         private RichTextBox _name;
         private RichTextBox _username;
-        private TextBox _managercode;
+        private RichTextBox _managercode;
         private string _password;
+        
 
 
         public Account(RichTextBox Name, RichTextBox Username, string Password)
@@ -22,7 +23,7 @@ namespace StarkAirlines
             _username = Username;
             _password = Password;
         }
-        public Account(RichTextBox Name, RichTextBox Username, string Password, TextBox ManagerCode )
+        public Account(RichTextBox Name, RichTextBox Username, string Password, RichTextBox ManagerCode )
         {
             _name = Name;
             _username = Username;
@@ -33,13 +34,17 @@ namespace StarkAirlines
         public RichTextBox Username { get { return _username; } }
         public string Password { get { return _password; } }
 
-        public TextBox Managercode { get => _managercode; set => _managercode = value; }
+        public RichTextBox Managercode { get => _managercode; set => _managercode = value; }
 
         public void CreateAccount()
         {
-            if (Username.Text == "" || Password == "" || Name.Text == "")
+            if (Username.Text == "" || Password == "" || Name.Text == "" || Managercode.Text == "")
             {
                 MessageBox.Show("Missing Information;");
+
+            } else if(Managercode.Text != "402")
+            {
+                MessageBox.Show("Incorrect Mananger Code!");
             }
             else
             {

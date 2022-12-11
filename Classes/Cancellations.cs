@@ -50,7 +50,7 @@ namespace StarkAirlines
         public DateTimePicker CancelDate { get => _cancelDate; set => _cancelDate = value; }
         public DataGridView CancelGrid { get => _cancelGrid; set => _cancelGrid = value; }
 
-        public void FetchCode()
+        public void FetchCode(RichTextBox Fcode)
         {
             Connection.Open();
 
@@ -62,7 +62,7 @@ namespace StarkAirlines
             foreach (DataRow dr in dt.Rows)
             {
 
-                FlightCode.Text = dr["Fcode"].ToString();
+                Fcode.Text = dr["Fcode"].ToString();
 
             }
 

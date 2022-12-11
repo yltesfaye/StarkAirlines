@@ -34,7 +34,7 @@ namespace StarkAirlines
         private void fetchFcode()
         {
             Cancellations cancelticket = new Cancellations(FcodeTb,TidCb);
-            cancelticket.FillTicketId();
+            cancelticket.FetchCode(FcodeTb);
         }
     
     private void label5_Click(object sender, EventArgs e)
@@ -45,8 +45,9 @@ namespace StarkAirlines
 
         private void Cancellation_Load(object sender, EventArgs e)
         {
-            FillTicketID();
-            Populate();
+            Cancellations cancelticket = new Cancellations(CanId, FcodeTb, TidCb, CancelDate, CancelDGV);
+            cancelticket.FillTicketId();
+            cancelticket.populate(CancelDGV);
 
         }
 

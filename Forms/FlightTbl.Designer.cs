@@ -144,8 +144,10 @@
             this.Fdest.Items.AddRange(new object[] {
             "Washington D.C.",
             "Miami",
-            "Tronto",
-            "Barcenola"});
+            "Rapid City",
+            "Chicago",
+            "Denver",
+            "Minneapolis"});
             this.Fdest.Location = new System.Drawing.Point(322, 307);
             this.Fdest.Name = "Fdest";
             this.Fdest.Size = new System.Drawing.Size(166, 21);

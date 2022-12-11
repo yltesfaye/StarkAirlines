@@ -79,32 +79,7 @@ namespace StarkAirlines
             CancelGrid.DataSource = ds.Tables[0];
             Connection.Close();
         }
-        public void Delete()
-        {
-            if (FlightCode.Text == "")
-            {
-                MessageBox.Show("Enter the Flight to Delete");
-            }
-            else
-            {
-                try
-                {
-                    Connection.Open();
-                    string query = "Delete from TicketTbl where TId='" + TicketID.SelectedValue.ToString() + "';";
-                    SqlCommand command = new SqlCommand(query, Connection);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Flight Deleted Successfully");
-                    Connection.Close();
-                    populate(CancelGrid);
-
-                }
-                catch (Exception except)
-                {
-                    MessageBox.Show(except.Message);
-                }
-
-            }
-        }
+       
         public void DeleteTicket()
         {
             if (FlightCode.Text == "")

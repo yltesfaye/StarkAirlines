@@ -15,12 +15,12 @@ namespace StarkAirlines
     public class Flights : Sql, IPopulate
     {
 
-        RichTextBox _flightCode;
-        RichTextBox _seatNum;
-        ComboBox _source;
-        ComboBox _destination;
-        DateTimePicker _date;
-        DataGridView _flightGrid;
+        private RichTextBox _flightCode;
+        private RichTextBox _seatNum;
+        private ComboBox _source;
+        private ComboBox _destination;
+        private DateTimePicker _date;
+        private DataGridView _flightGrid;
 
         public RichTextBox FlightCode { get => _flightCode; set => _flightCode = value; }
         public RichTextBox SeatNum { get => _seatNum; set => _seatNum = value; }

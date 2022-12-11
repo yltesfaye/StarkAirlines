@@ -12,18 +12,18 @@ namespace StarkAirlines
 {
     public class Tickets : Sql, IPopulate, IFillPassenger, IFillFlight, IFetchPassengers
     {
-        string _ticketId;
-        string _flightCode;
-        string _passengerID;
-        string _passengerName;
-        string _passengerPassport;
-        string _passengerNationality;
-        string _ticketAmount;
-        RichTextBox ticketId;
-        RichTextBox PassengerNameRTB;
-        RichTextBox Nationality;
-        RichTextBox Amount;
-        RichTextBox PassportNumber;
+        private string _ticketId;
+        private string _flightCode;     
+        private string _passengerID;
+        private string _passengerName;
+        private string _passengerPassport;
+        private string _passengerNationality;
+        private string _ticketAmount;
+        private RichTextBox ticketId;
+        private RichTextBox _passengerNameRTB;
+        private RichTextBox _nationality;
+        private RichTextBox _amount;
+        private RichTextBox _passportNumber;
 
         public string TicketId { get => _ticketId; set => _ticketId = value; }
         public string FlightCode { get => _flightCode; set => _flightCode = value; }
@@ -33,10 +33,10 @@ namespace StarkAirlines
         public string PassengerNationality { get => _passengerNationality; set => _passengerNationality = value; }
         public string TicketAmount { get => _ticketAmount; set => _ticketAmount = value; }
         public RichTextBox TicketId1 { get => ticketId; set => ticketId = value; }
-        public RichTextBox PassengerNameRTB1 { get => PassengerNameRTB; set => PassengerNameRTB = value; }
-        public RichTextBox Nationality1 { get => Nationality; set => Nationality = value; }
-        public RichTextBox Amount1 { get => Amount; set => Amount = value; }
-        public RichTextBox PassportNumber1 { get => PassportNumber; set => PassportNumber = value; }
+        public RichTextBox PassengerNameRTB { get => _passengerNameRTB; set => _passengerNameRTB = value; }
+        public RichTextBox Nationality { get => _nationality; set => _nationality = value; }
+        public RichTextBox Amount { get => _amount; set => _amount = value; }
+        public RichTextBox PassportNumber { get => _passportNumber; set => _passportNumber = value; }
 
 
         public Tickets()

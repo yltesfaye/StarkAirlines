@@ -35,6 +35,17 @@ namespace StarkAirlines
         {
             this._passengerId = passengerId;
         }
+        public Passengers(RichTextBox passengerId, RichTextBox passengerName, RichTextBox passportNumber, RichTextBox passportAddress, ComboBox country, ComboBox gender, RichTextBox phoneNumber)
+        {
+            _passengerId = passengerId;
+            _passengerName = passengerName;
+            _passportNumber = passportNumber;
+            _passengerAddress = passportAddress;
+            _country = country;
+            _gender = gender;
+            _phoneNumber = phoneNumber;
+        }
+
         public RichTextBox PassengerId { get => _passengerId; set => _passengerId = value; }
         public RichTextBox PassengerName { get => _passengerName; set => _passengerName = value; }
         public RichTextBox PassportNumber { get => _passportNumber; set => _passportNumber = value; }
@@ -83,7 +94,33 @@ namespace StarkAirlines
             dataGrid.DataSource = ds.Tables[0];
             Connection.Close();
         }
-        public void  Fill()
+        public void Add()
+        {
+            if (PassengerId.Text == "" || PassengerAddress.Text == "" || PassportNumber.Text == "" || PhoneNumber.Text == "")
+            {
+                MessageBox.Show("Missing Information;");
+            }
+            else
+            {
+                try
+                {
+                    Connection.Open();
+                    string query = "Insert into PassengerTbl values (" + PassengerId.Text + ", '" + PassengerName.Text + "', '" + PassengerAddress.Text + "', '" + PassportNumber.Text + "', '" + Country.SelectedItem.ToString() + "', '" + Gender.SelectedItem.ToString() + "', '" + PhoneNumber.Text + "')";
+                    SqlCommand cmd = new SqlCommand(query, Connection);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Passenger Recorded Successfully");
+                    Connection.Close();
+
+                }
+                catch (Exception Excpt)
+                {
+                    MessageBox.Show(Excpt.Message);
+                }
+                Reset();
+
+            }
+        }
+            public void  Fill()
         {
             PassengerId.Text = PassengerGrid.SelectedRows[0].Cells[0].Value.ToString();
             PassengerName.Text = PassengerGrid.SelectedRows[0].Cells[1].Value.ToString();
@@ -129,7 +166,7 @@ namespace StarkAirlines
             PassengerName.Text = " ";
             PhoneNumber.Text = " ";
             Country.Items.Remove(Country.SelectedItem);
-            Country.Items.Remove(Country.SelectedItem);
+            Gender.Items.Remove(Country.SelectedItem);
 
         }
     }

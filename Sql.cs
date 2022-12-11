@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace StarkAirlines
 {
-    public class Sql
+    public abstract class Sql
     {
 
         SqlConnection Connect = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename=C:\Users\DSU\OneDrive - Dakota State University\Documents\AirlineDb.mdf;Integrated Security = True; Connect Timeout = 30");

@@ -33,27 +33,10 @@ namespace StarkAirlines
 
         private void AddPassenger_Click(object sender, EventArgs e)
         {
-            if (PassId.Text == "" || PassAdd.Text == "" || PassportTb.Text == "" || PhoneTb.Text == "")
-            {
-                MessageBox.Show("Missing Information;");
-            } else
-            {
-                try
-                {
-                    Connect.Open();
-                   string query = "Insert into PassengerTbl values (" + PassId.Text + ", '" + PassName.Text + "', '" + PassAdd.Text + "', '" + PassportTb.Text + "', '" + NationalityCb.SelectedItem.ToString() + "', '" + GenderCb.SelectedItem.ToString() + "', '" + PhoneTb.Text + "')";
-                   SqlCommand cmd = new SqlCommand(query, Connect);
-                   cmd.ExecuteNonQuery();
-                    MessageBox.Show("Passenger Recorded Successfully");
-                    Connect.Close();
-               
-                } catch (Exception Excpt)
-                {
-                    MessageBox.Show(Excpt.Message);
-                }
 
-            }
+            Passengers passenger = new Passengers(PassId, PassName, PassportTb, PassAdd, NationalityCb, GenderCb, PhoneTb);
 
+            passenger.Add();
         }
 
         private void Reset_Click(object sender, EventArgs e)

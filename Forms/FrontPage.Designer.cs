@@ -39,9 +39,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-4, -10);
+            this.pictureBox1.Location = new System.Drawing.Point(-6, -15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(505, 498);
+            this.pictureBox1.Size = new System.Drawing.Size(758, 766);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -55,21 +56,22 @@
             // 
             this.Progressbar.BackColor = System.Drawing.Color.LightSkyBlue;
             this.Progressbar.ForeColor = System.Drawing.Color.Orange;
-            this.Progressbar.Location = new System.Drawing.Point(-4, 472);
+            this.Progressbar.Location = new System.Drawing.Point(-6, 726);
+            this.Progressbar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Progressbar.Name = "Progressbar";
-            this.Progressbar.Size = new System.Drawing.Size(505, 16);
+            this.Progressbar.Size = new System.Drawing.Size(758, 25);
             this.Progressbar.TabIndex = 1;
+            this.Progressbar.Click += new System.EventHandler(this.Progressbar_Click);
             // 
             // FrontPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MidnightBlue;
-            this.ClientSize = new System.Drawing.Size(499, 487);
+            this.ClientSize = new System.Drawing.Size(748, 749);
             this.Controls.Add(this.Progressbar);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrontPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stark Airlines";

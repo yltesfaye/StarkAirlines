@@ -52,8 +52,8 @@ namespace StarkAirlines
 
 
            Tickets newTicket = new Tickets (Tid.Text, FCode.SelectedValue.ToString(), PidCb.SelectedValue.ToString(), PNameTb.Text, PpassTb.Text, PnatTb.Text, PamtTb.Text);
-
             newTicket.Book();
+            newTicket.Reset(Tid, PamtTb);
 
             
         }
@@ -62,7 +62,7 @@ namespace StarkAirlines
         {
 
             Tickets ClearTicket = new Tickets(Tid, PNameTb, PnatTb, PamtTb, PpassTb);
-            ClearTicket.Reset();
+            ClearTicket.Reset(Tid,PamtTb);
             
         }
 

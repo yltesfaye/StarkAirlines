@@ -73,12 +73,18 @@ namespace StarkAirlines
         {
             Cancellations cancelticket = new Cancellations(CanId, FcodeTb, TidCb,CancelDate, CancelDGV);
             cancelticket.Cancel();
+            cancelticket.Clear();
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
             CanId.Text = " ";
             FcodeTb.Text = " ";
+        }
+
+        private void TidCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

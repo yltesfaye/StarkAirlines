@@ -49,6 +49,8 @@ namespace StarkAirlines
         {
             Flights flights = new Flights();
             flights.Delete(FcodeTb, FlightDGV);
+            flights.Reset(FcodeTb, SeatNum, SrcCb, DstCb);
+
         }
 
         private void Update_Click(object sender, EventArgs e)
@@ -56,6 +58,8 @@ namespace StarkAirlines
         {
             Flights flights = new Flights();
             flights.Update(FcodeTb, SeatNum, SrcCb, DstCb, FDate, FlightDGV);
+            flights.Reset(FcodeTb, SeatNum, SrcCb, DstCb);
+
         }
 
         private void Reset_Click(object sender, EventArgs e)

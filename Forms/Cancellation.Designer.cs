@@ -217,6 +217,7 @@
             this.TidCb.Name = "TidCb";
             this.TidCb.Size = new System.Drawing.Size(247, 28);
             this.TidCb.TabIndex = 70;
+            this.TidCb.SelectedIndexChanged += new System.EventHandler(this.TidCb_SelectedIndexChanged);
             this.TidCb.SelectionChangeCommitted += new System.EventHandler(this.TidCb_SelectionChangeCommitted);
             // 
             // FcodeTb

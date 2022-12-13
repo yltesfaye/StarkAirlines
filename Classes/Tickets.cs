@@ -95,12 +95,18 @@ namespace StarkAirlines
 
         public void Reset()
         {
-            TicketId1.Clear();
-            PassengerNameRTB.Clear();
-            Nationality.Clear();
+           // TicketId1.Clear();
+          //  PassengerNameRTB.Clear();
+          // Nationality.Clear();
             Amount.Clear();
-            PassportNumber.Clear();
+          // PassportNumber.Clear();
         }
+        public void Reset(RichTextBox ticketidPar, RichTextBox amountPar)
+        {
+            ticketidPar.Clear();
+            amountPar.Clear();
+        }
+
 
         public void populate(DataGridView data)
         {

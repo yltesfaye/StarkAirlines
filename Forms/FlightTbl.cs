@@ -79,28 +79,10 @@ namespace StarkAirlines
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Fcode.Text == "" || Fsource.Text == "" || Fdest.Text == "" || Fdate.Text == "" || Fseatnum.Text == "")
-            {
-                MessageBox.Show("Missing Information;");
-            }
-            else
-            {
-                try
-                {
-                    Connect.Open();
-                    string query = "Insert into FlightTbl values ('" + Fcode.Text + "', '" + Fsource.SelectedItem.ToString() + "', '" + Fdest.SelectedItem.ToString() + "', '" + Fdate.Value.ToString() + "', " + Fseatnum.Text + ")";
-                    SqlCommand cmd = new SqlCommand(query, Connect);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Flight Recorded Successfully");
-                    Connect.Close();
 
-                }
-                catch (Exception Excpt)
-                {
-                    MessageBox.Show(Excpt.Message);
-                }
-
-            }
+            Flights flight = new Flights(Fcode, Fseatnum, Fsource, Fdest, Fdate);
+            flight.AddFlight();
+            flight.Reset();
         }
 
         private void Flights_Load(object sender, EventArgs e)
@@ -110,8 +92,8 @@ namespace StarkAirlines
 
         private void ResetFlight_Click(object sender, EventArgs e)
         {
-            Fcode.Text = "";
-            Fseatnum.Text = "";
+            Flights flight = new Flights(Fcode, Fseatnum, Fsource, Fdest, Fdate);
+            flight.Reset();
         }
 
         private void ViewFlights_Click(object sender, EventArgs e)

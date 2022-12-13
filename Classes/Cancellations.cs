@@ -152,9 +152,9 @@ namespace StarkAirlines
         {
             CancellationId.Text = " ";
             FlightCode.Text = " ";
-            TicketID.Items.Remove(TicketID.SelectedItem);
+            //TicketID.Items.Remove(TicketID.SelectedItem);
             CancelDate.ResetText();
             
-        }
+        }   
     }
 }

@@ -32,6 +32,7 @@ namespace StarkAirlines
             Passengers passenger = new Passengers(PidTb, PnameTb, PpassTb, PaddTb, NatCb, GendCb, PphoneTB, PassengerDGV);
 
             passenger.Update();
+            passenger.Reset();
 
         }
     
@@ -52,7 +53,10 @@ namespace StarkAirlines
 
         private void DeleteView_Click(object sender, EventArgs e)
         {
-            
+            Passengers passenger = new Passengers(PidTb, PnameTb, PpassTb, PaddTb, NatCb, GendCb, PphoneTB, PassengerDGV);
+            passenger.Delete();
+            passenger.Reset();
+          
         }
 
         private void PassengerDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)

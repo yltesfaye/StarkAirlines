@@ -43,6 +43,14 @@ namespace StarkAirlines
             Date = date;
             FlightGrid = flightgrid;
         }
+        public Flights(RichTextBox flightCode, RichTextBox seatNum, ComboBox source, ComboBox destination, DateTimePicker date)
+        {
+            FlightCode = flightCode;
+            SeatNum = seatNum;
+            Source = source;
+            Destination = destination;
+            Date = date;
+        }
 
         public void Fill_Table(RichTextBox FlightCode, RichTextBox SeatNum,ComboBox Source ,ComboBox Destination)
         {
@@ -56,7 +64,7 @@ namespace StarkAirlines
         public void populate(DataGridView data)
         {
             Connection.Open();
-            string query = "select * from TicketTbl";
+            string query = "select * from FlightTbl";
             SqlDataAdapter adapter = new SqlDataAdapter(query, Connection);
             SqlCommandBuilder builder = new SqlCommandBuilder(adapter);
             var ds = new DataSet();
@@ -65,9 +73,9 @@ namespace StarkAirlines
             Connection.Close();
         }
 
-        public void Delete(RichTextBox FlightCdoe, DataGridView FlightGrid)
+        public void Delete(RichTextBox flightcode, DataGridView FlightGrid)
         {
-            if (FlightCode.Text == "")
+            if (flightcode.Text == "")
             {
                 MessageBox.Show("Enter the Flight to Delete");
             }
@@ -76,7 +84,7 @@ namespace StarkAirlines
                 try
                 {
                     Connection.Open();
-                    string query = "Delete from FlightTbl where Fcode='" + FlightCode.Text + "';";
+                    string query = "Delete from FlightTbl where Fcode='" + flightcode.Text + "';";
                     SqlCommand command = new SqlCommand(query, Connection);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Flight Deleted Successfully");
@@ -93,6 +101,41 @@ namespace StarkAirlines
 
         }
 
+        public void Reset()
+        {
+            FlightCode.Text = "";
+            Source.Text = "";
+            Destination.Text = "";
+            Date.Text = "";
+            SeatNum.Text = "";
+        }
+
+        public void AddFlight()
+        {
+            if (FlightCode.Text == "" || Source.Text == "" || Destination.Text == "" || Date.Text == "" || SeatNum.Text == "")
+            {
+                MessageBox.Show("Missing Information;");
+            }
+            else
+            {
+                try
+                {
+                    Connection.Open();
+                    string query = "Insert into FlightTbl values ('" + FlightCode.Text + "', '" + Source.SelectedItem.ToString() + "', '" + Destination.SelectedItem.ToString() + "', '" + Date.Value.ToString() + "', " + SeatNum.Text + ")";
+                    SqlCommand cmd = new SqlCommand(query, Connection);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Flight Recorded Successfully");
+                    Connection.Close();
+
+                }
+                catch (Exception Excpt)
+                {
+                    MessageBox.Show(Excpt.Message);
+                }
+
+            }
+
+        }
         public void Update(RichTextBox FlightCode, RichTextBox SeatNum, ComboBox Source, ComboBox Destination, DateTimePicker Date, DataGridView FlightGrid )
         {
             if (FlightCode.Text == "" || SeatNum.Text == "")

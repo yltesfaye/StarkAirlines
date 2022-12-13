@@ -41,7 +41,8 @@ namespace StarkAirlines
 
         private void Reset_Click(object sender, EventArgs e)
         {
-
+            Passengers passenger = new Passengers(PassId, PassName, PassportTb, PassAdd, NationalityCb, GenderCb, PhoneTb);
+            passenger.Reset();
         }
 
         private void ViewPassengers_Click(object sender, EventArgs e)
